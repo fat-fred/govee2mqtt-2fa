@@ -1,6 +1,8 @@
 MIT License
 
 Copyright (c) 2024-Present Wez Furlong
+Copyright (c) 2025-Present sitapix (per-device config, fan/group-light/air-quality, 2FA login)
+Copyright (c) 2026-Present Christian Zippel (fat-fred — fork packaging, 2FA add-on integration)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

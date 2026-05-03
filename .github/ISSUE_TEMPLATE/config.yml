@@ -1,5 +1,11 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
+  - name: 2FA / email-verification problems (status 454, 455, code expired)
+    url: https://github.com/fat-fred/govee2mqtt-2fa/issues/new
+    about: This fork only adds the 2FA login flow. Open an issue here if the problem is in login/verification.
   - name: Frequently Asked Questions
     url: https://github.com/fat-fred/govee2mqtt-2fa/blob/main/docs/FAQ.md
-    about: Please check this before creating an issue.
+    about: Check before opening anything (covers status 454, 455, code expiry).
+  - name: All other Govee2MQTT bugs (devices, MQTT, scenes, LAN discovery, segments, effects)
+    url: https://github.com/wez/govee2mqtt/issues
+    about: Please report core bugs upstream — they will be fixed there and inherited by this fork.

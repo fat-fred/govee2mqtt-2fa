@@ -1,5 +1,37 @@
 # Frequently asked Questions
 
+## I see `request status 454` in the add-on logs — what is this?
+
+Govee enforces server-side **email verification** on undocumented-API logins
+since March 2026. Every login attempt with email + password returns status
+`454` and triggers a 6-digit code email to your Govee account.
+
+This fork handles that flow:
+
+1. On first start, the bridge attempts login, hits 454, and asks Govee to
+   email you a code.
+2. The add-on stops with the message:
+   *"Govee 2FA verification required. A code has been sent to ...".*
+3. Open the email, copy the 6-digit code.
+4. In the add-on configuration, paste the code into `govee_2fa_code`, save,
+   and start again.
+5. Login completes with `/v2/login`, the auth token is cached, and the
+   bridge stays running.
+
+The code expires in ~15 minutes. If it does, clear `govee_2fa_code` and
+restart — a new email will be sent.
+
+## I see `request status 455` — what is this?
+
+The verification code was wrong or already expired. Clear `govee_2fa_code`
+in the add-on config and restart. A fresh code will be emailed.
+
+## Do I need to enter the code every time?
+
+No. Govee's auth token is cached for ~12 hours. After that the bridge may
+need a fresh code on the next restart, but as long as the bridge is running
+and reconnecting to MQTT/IoT, no re-entry is needed.
+
 ## Why can't I turn off a Segment?
 
 For devices with LAN support, segments can be turned off by setting the color

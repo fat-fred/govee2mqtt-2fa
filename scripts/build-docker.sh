@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-set -x
 
 TARGETPLATFORM=$1
+echo "build-docker: TARGETPLATFORM=$TARGETPLATFORM"
 shift
 
 ./scripts/build-cross.sh "$TARGETPLATFORM"

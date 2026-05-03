@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-set -x
 
 TARGETPLATFORM=$1
+echo "build-cross: TARGETPLATFORM=$TARGETPLATFORM"
 
 case "$TARGETPLATFORM" in
   "linux/amd64")

@@ -70,8 +70,7 @@ export_config govee_app_version  GOVEE_APP_VERSION
 export_config govee_2fa_code     GOVEE_2FA_CODE
 export_config poll_interval      GOVEE_POLL_INTERVAL
 
-env | grep GOVEE_ | sed -r 's/_(EMAIL|KEY|PASSWORD|2FA_CODE)=.*/_\1=REDACTED/'
-set -x
+env | grep -E '^GOVEE_' | sed -r 's/_(EMAIL|KEY|PASSWORD|2FA_CODE|MQTT_USER|MQTT_PASSWORD)=.*/_\1=REDACTED/'
 
 cd /app
 exec /app/govee serve

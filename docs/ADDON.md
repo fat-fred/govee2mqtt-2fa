@@ -1,11 +1,15 @@
-# Installing as a Home Assistant App
+# Installing as a Home Assistant Add-on
 
 If you are running HAOS or Supervised Home Assistant, then your
-installation is compatible with Home Assistant Apps.
+installation is compatible with Home Assistant Add-ons.
 
 If you installed Home Assistant through a different technique,
-you cannot install Apps and will need to use a different
+you cannot install Add-ons and will need to use a different
 approach to setting up Govee2MQTT.
+
+> **Note on screenshots:** the screenshots below are from the original
+> `wez/govee2mqtt` walkthrough. The flow is identical for this fork — only
+> the add-on name (`Govee2MQTT (2FA Fix)`) and the repository URL differ.
 
 ## Overview
 
@@ -16,9 +20,9 @@ The broad steps are:
 
 * Enable advanced mode to allow installing Govee2MQTT
   from this repository.
-* Install a MQTT Broker from the App store
+* Install a MQTT Broker from the Add-on Store
 * Enable the MQTT Integration
-* Add this repository to your App store
+* Add this repository to your Add-on Store
 * Install Govee2MQTT
 * Configure it
 * Start it
@@ -29,15 +33,15 @@ The broad steps are:
 
 Go to your user profile; click on your profile icon in the
 bottom left of the screen.  Scroll down and turn on "Advanced Mode"
-so that you will be able to see Govee2MQTT in the list of Apps
+so that you will be able to see Govee2MQTT in the list of Add-ons
 when we get to that point.
 
 ![image](https://github.com/wez/govee-lan-hass/assets/117777/444c399d-0a91-41bf-804e-efcbabe17635)
 
 ### Set up MQTT
 
-1. Go to the Apps section of the settings: https://my.home-assistant.io/redirect/supervisor
-2. Click on the "App Store" button in the bottom right corner
+1. Go to the Add-ons section of the settings: https://my.home-assistant.io/redirect/supervisor
+2. Click on the "Add-on Store" button in the bottom right corner
 3. Look for the "Mosquitto Broker"
     * Click on it
     * Install it
@@ -46,8 +50,8 @@ when we get to that point.
 
 ### Now Install Govee2MQTT
 
-1. Go to the Apps section of the settings: https://my.home-assistant.io/redirect/supervisor
-2. Click on the "App Store" button in the bottom right corner
+1. Go to the Add-ons section of the settings: https://my.home-assistant.io/redirect/supervisor
+2. Click on the "Add-on Store" button in the bottom right corner
 3. Look for the 3 vertically stacked dots in the top right corner:
 
 ![image](https://github.com/wez/govee-lan-hass/assets/117777/c425615b-d7be-4ff2-a0d9-c8b7cfb8b63e)
