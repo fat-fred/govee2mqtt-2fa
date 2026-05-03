@@ -1,0 +1,58 @@
+name: Govee2MQTT (2FA Fix)
+image: ghcr.io/fat-fred/govee2mqtt-{arch}
+version: "2026.05.03-0"
+slug: govee2mqtt
+description: Govee Bridge with 2FA login support — fixes the March 2026 Govee server-side verification block.
+url: https://github.com/fat-fred/govee2mqtt-2fa
+arch:
+  - amd64
+  - aarch64
+init: false
+boot: auto
+startup: services
+services:
+  - mqtt:need
+
+apparmor: true
+
+webui: http://[HOST]:[PORT:8056]/assets/index.html
+
+# Host network access is required for LAN discovery
+host_network: true
+
+map:
+  - type: addon_config
+    read_only: false
+    path: /config
+
+options:
+  temperature_scale: "C"
+
+schema:
+  temperature_scale: "str?"
+  govee_email: "str?"
+  govee_password: "password?"
+  govee_api_key: "password?"
+  mqtt_host: "str?"
+  mqtt_port: "int?"
+  mqtt_username: "str?"
+  mqtt_password: "password?"
+  debug_level: "str?"
+  no_multicast: "bool?"
+  broadcast_all: "bool?"
+  global_broadcast: "bool?"
+  scan: "str?"
+  disable_effects: "bool?"
+  allowed_effects: "str?"
+  # Override the Govee Home app version string sent in API headers.
+  # Set this when login fails with "The app version is too low".
+  govee_app_version: "str?"
+  # 2FA verification code emailed by Govee when a new-device login is
+  # required. Leave blank on first run; the bridge will trigger Govee
+  # to email you a code, then you set this value and restart within
+  # ~15 minutes before it expires.
+  govee_2fa_code: "password?"
+  # Advanced: polling interval in seconds (default 120).
+  # Increase to 900 if you have many devices without IoT/LAN support
+  # to avoid exceeding the Govee API rate limit (10,000 req/day).
+  poll_interval: "int?"
