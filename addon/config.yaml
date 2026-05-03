@@ -1,6 +1,6 @@
 name: Govee2MQTT (2FA Fix)
 image: ghcr.io/fat-fred/govee2mqtt-{arch}
-version: "2026.05.03-c9b3d541"
+version: "2026.05.03-2"
 slug: govee2mqtt
 description: Govee Bridge with 2FA login support — fixes the March 2026 Govee server-side verification block.
 url: https://github.com/fat-fred/govee2mqtt-2fa
